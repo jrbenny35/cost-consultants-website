@@ -1,0 +1,32 @@
+{
+  "name": "Cost Consultants",
+  "description": "",
+  "main": "",
+  "authors": [
+    "jrbenny35 <bennyjr169@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "homepage": "costconsulants.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies":{
+    "angular": "~1.4.7",
+    "angular-animate": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "hover": "~2.0.2",
+    "angular-route": "~1.4.7",
+    "angular-resource": "~1.4.7",
+    "angular-material": "master",
+    "angular-messages": "~1.4.7"
+    }
+}
