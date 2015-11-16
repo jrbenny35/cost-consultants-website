@@ -26,7 +26,6 @@
     "hover": "~2.0.2",
     "angular-route": "~1.4.7",
     "angular-resource": "~1.4.7",
-    "angular-material": "master",
     "angular-messages": "~1.4.7"
     }
 }
