@@ -11,10 +11,11 @@ html
     link(rel='stylesheet', href='/javascripts/vendor/angular-material/angular-material.css')
     link(rel='stylesheet', href='/javascripts/vendor/hover/css/hover.css')
     link(rel='stylesheet', href='dist/stylesheets/main.min.css')
-  body
+    base(href='/')
+  body(ng-app='webApp')
     .container
       include ./partials/navbar.jade
-    include ./partials/carousel.jade
+    div(ui-view='')
 
 
 
