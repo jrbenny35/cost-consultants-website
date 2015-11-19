@@ -1,52 +1,28 @@
-nav.navbar.navbar-default
-  .container-fluid
-    // Brand and toggle get grouped for better mobile display
-    .navbar-header
-      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar-collapse-1', aria-expanded='false')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand() COST Consul.
-    // Collect the nav links, forms, and other content for toggling
-    #navbar-collapse-1.collapse.navbar-collapse
-      ul.nav.navbar-nav
-        li.active
-          a(ui-sref='/') Home
-            span.sr-only (current)
-        li
-          a(ui-sref='about') About
-        li.dropdown
-          a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-            | Dropdown
-            span.caret
-          ul.dropdown-menu
-            li
-              a(ui-sref='info') Information
-            li
-              a(ui-sref='about') About
-            li
-              a(ui-sref='contact') Contact Us
-            li.divider(role='separator')
-            li
-              a(href='#') Separated link
-            li.divider(role='separator')
-            li
-              a(href='#') One more separated link
-      ul.nav.navbar-nav.navbar-right
-        li
-          a(href='#') Link
-        li.dropdown
-          a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-            | Dropdown
-            span.caret
-          ul.dropdown-menu
-            li
-              a(href='#') Action
-            li
-              a(href='#') Another action
-            li
-              a(href='#') Something else here
-            li.divider(role='separator')
-            li
-              a(href='#') Separated link
+div(layout='row')
+  md-toolbar.md-whiteframe-z1(layout='row')
+    md-button#leftToggle(aria-label='Show Nav', ng-controller="LeftNavCtrl", ng-click='toggleSidenav()')
+      md-icon(md-svg-icon='images/angular-material/menu.svg')
+    span(flex='')
+    md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 12px')
+      ng-md-icon(icon="people" style="fill: white" size="30")
+  md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', layout='column')
+    md-toolbar.md-whiteframe-z1.md-tall
+      span(flex='')
+      h2.md-toolbar-tools.md-toolbar-tools-bottom
+        span.md-flex Ben Forehand Jr
+    md-list(ng-controller="LeftNavCtrl")
+      md-list-item
+        md-button.md-button(ui-sref='/' flex='' ui-sref-active='active' ng-click='close()')
+          h3 Home
+      md-list-item
+        md-button.md-button(ui-sref='about' flex='' ui-sref-active='active' ng-click='close()')
+          h3 About
+      md-list-item
+        md-button.md-button(ui-sref='projects' flex='' ui-sref-active='active' ng-click='close()')
+          h3 Projects
+      md-list-item
+        md-button.md-button(ui-sref='resume' flex='' ui-sref-active='active' ng-click='close()')
+          h3 Resume
+      md-list-item
+        md-button.md-button(ui-sref='contact' flex='' ui-sref-active='active' ng-click='close()')
+          h3 Contact

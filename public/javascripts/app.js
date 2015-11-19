@@ -4,16 +4,18 @@
 
 'use strict';
 
-var myApp = angular.module('webApp', [
+var myApp = angular.module('myApp',[
+
     'ui.router',
-    'ngMessages',
-    'ngResource',
     'ngAnimate',
+    'controllers',
     'ngResource',
+    'ngMaterial',
+    'ngMessages',
     'ngMdIcons'
 
-
 ]);
+
 myApp.config(function ($stateProvider, $locationProvider) {
 
 
@@ -38,7 +40,14 @@ myApp.config(function ($stateProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
+myApp.config(function ($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+        .primaryPalette('blue')
+        .accentPalette('pink');
+
+});
+
 //Resources
 //myApp.factory('Contact', function($resource) {
-  //  return $resource('/api/contact/:id', { id: '@_id' }); //full endpoint address
+//  return $resource('/api/contact/:id', { id: '@_id' }); //full endpoint address
 //});

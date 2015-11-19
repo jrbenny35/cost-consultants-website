@@ -29,6 +29,7 @@ app.use(function (req, res, next) {
   next();
 });
 
+//Load routes
 app.use(require('./routes'));
 
 
