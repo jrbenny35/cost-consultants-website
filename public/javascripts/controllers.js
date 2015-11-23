@@ -26,3 +26,24 @@ module.controller('RightNavCtrl', ['$scope', '$mdSidenav', function ($scope, $md
     }
 
 }]);
+
+module.controller('CarouselCtrl', ['$scope' , function ($scope) {
+
+    $scope.myInterval = 3000;
+    $scope.slides = [
+        {
+            image: './images/black-leather-texture-hd-free-wallpaper_1242103205.jpg',
+            text: 'Slide 1'
+        },
+        {
+            image: './images/black-leather-texture-hd-free-wallpaper_1242103205.jpg',
+            text: 'Slide 2'
+        },
+        {
+            image: './images/black-leather-texture-hd-free-wallpaper_1242103205.jpg',
+            text: 'Slide 3'
+        }
+    ];
+
+
+}]);

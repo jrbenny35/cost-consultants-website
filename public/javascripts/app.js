@@ -12,6 +12,7 @@ var myApp = angular.module('myApp',[
     'ngResource',
     'ngMaterial',
     'ngMessages',
+    'ui.bootstrap',
     'ngMdIcons'
 
 ]);

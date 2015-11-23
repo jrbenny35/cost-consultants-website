@@ -1,1 +1,33 @@
-p Home page
+div(layout='column')
+  //md-content
+    md-card
+      h1(style='text-align: center;') Big Callout
+  md-content
+    div(style='min-height: 450px;' ng-controller='CarouselCtrl')
+      uib-carousel(interval='myInterval', no-wrap='noWrapSlides')
+        uib-slide(ng-repeat='slide in slides', active='slide.active')
+          img(ng-src='{{slide.image}}', style='margin:auto;')
+          .carousel-caption
+            h4 Slide {{$index}}
+            p {{slide.text}}
+br
+div()
+  md-content
+    md-card
+      h1(style='text-align: center;') Marketing Lingo
+    md-card
+      h1(style='text-align: center;') Cost Consultants
+      md-card-content
+        p Hello world
+    md-card
+      h1(style='text-align: center;') Cost Consultants
+      md-card-content
+        p Hello world
+    md-card
+      h1(style='text-align: center;') Cost Consultants
+      md-card-content
+        p Hello world
+    md-card
+      h1(style='text-align: center;') Cost Consultants
+      md-card-content
+        p Hello world

@@ -6,14 +6,15 @@ html(ng-app='myApp')
     meta(name='description', content='')
     meta(name='viewport', content="initial-scale=1, maximum-scale=1, user-scalable=no")
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css',
+      integrity='sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==', crossorigin='anonymous')
     link(rel='stylesheet', href='https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.css')
     link(rel='stylesheet', href='/javascripts/vendor/hover/css/hover.css')
     link(rel='stylesheet', href='/dist/stylesheets/main.min.css')
     base(href='/')
   body(layout='column')
-    md-content(flex)
-      include ./partials/navbar.jade
-      div.layout-padding(layout-fill ui-view='')
+    include ./partials/navbar.jade
+    div.layout-padding(ui-view='')
 
 
 
@@ -29,4 +30,5 @@ html(ng-app='myApp')
     script(type="text/javascript" src='/javascripts/vendor/angular-material/angular-material.js')
     script(type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js')
     script(type="text/javascript" src='/javascripts/vendor/angular-ui-router/release/angular-ui-router.min.js')
+    script(type="text/javascript" src='/javascripts/vendor/angular-bootstrap/ui-bootstrap-tpls.js')
     script(type="text/javascript" src='/dist/javascripts/indexFinal.min.js')

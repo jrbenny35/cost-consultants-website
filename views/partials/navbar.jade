@@ -3,13 +3,13 @@ div(layout='row')
     md-button#leftToggle(aria-label='Show Nav', ng-controller="LeftNavCtrl", ng-click='toggleSidenav()')
       md-icon(md-svg-icon='images/angular-material/menu.svg')
     span(flex='')
-    md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 12px')
+    //md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 12px')
       ng-md-icon(icon="people" style="fill: white" size="30")
   md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', layout='column')
     md-toolbar.md-whiteframe-z1.md-tall
       span(flex='')
       h2.md-toolbar-tools.md-toolbar-tools-bottom
-        span.md-flex Ben Forehand Jr
+        span.md-flex Cost Consultants
     md-list(ng-controller="LeftNavCtrl")
       md-list-item
         md-button.md-button(ui-sref='/' flex='' ui-sref-active='active' ng-click='close()')
@@ -18,11 +18,8 @@ div(layout='row')
         md-button.md-button(ui-sref='about' flex='' ui-sref-active='active' ng-click='close()')
           h3 About
       md-list-item
-        md-button.md-button(ui-sref='projects' flex='' ui-sref-active='active' ng-click='close()')
-          h3 Projects
-      md-list-item
-        md-button.md-button(ui-sref='resume' flex='' ui-sref-active='active' ng-click='close()')
-          h3 Resume
-      md-list-item
         md-button.md-button(ui-sref='contact' flex='' ui-sref-active='active' ng-click='close()')
-          h3 Contact
+          h3 Contact us
+      md-list-item
+        md-button.md-button(ui-sref='info' flex='' ui-sref-active='active' ng-click='close()')
+          h3 Information
