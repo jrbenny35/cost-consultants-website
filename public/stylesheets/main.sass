@@ -4,6 +4,7 @@ html, body
   width: 100%
   overflow: hidden
 
+
 hr
   border-bottom: 1px solid #ba68c8
 
@@ -13,9 +14,12 @@ hr
   width: 100%
   overflow: scroll
   padding-bottom: 75px
+  background-color: #f1f1f1
 
 #mainContainer
   overflow: hidden
+
+
 
 #leftNav
   .md-button
@@ -29,6 +33,27 @@ hr
   md-card
     min-height: 400px
     max-height: 400px
+
+#homeCarousel
+  min-height: 600px
+  max-height: 600px
+
+  uib-carousel, uib-slide
+    min-height: 600px
+    max-height: 600px
+
+  .carousel-caption
+    margin-bottom: 50px
+    background-color: rgba(#000, .5)
+    
+    h1
+      color: white
+      
+  img
+    margin: auto
+    min-width: 100%
+    max-height: 600px
+    display: block
 
 #about
   .md-card-image
