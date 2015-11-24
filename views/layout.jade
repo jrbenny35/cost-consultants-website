@@ -13,8 +13,43 @@ html(ng-app='myApp')
     link(rel='stylesheet', href='/dist/stylesheets/main.min.css')
     base(href='/')
   body(layout='column')
-    include ./partials/navbar.jade
-    div.layout-padding(ui-view='')
+    md-content#mainContainer
+      div(layout='row')
+        md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', layout='column' md-is-locked-open="$mdMedia('gt-md')")
+          md-toolbar.md-whiteframe-z1.md-tall
+            span(flex='')
+            h2.md-toolbar-tools.md-toolbar-tools-bottom
+              span.md-flex Cost Consultants
+          md-list()#leftNav
+            md-list-item
+              md-button.md-button.md-raised(ui-sref='/' flex='' ui-sref-active='active' ng-click='close()')
+                h3 Home
+              md-divider
+            md-list-item
+              md-button.md-button.md-raised(ui-sref='about' flex='' ui-sref-active='active' ng-click='close()')
+                h3 About
+              md-divider
+            md-list-item
+              md-button.md-button.md-raised(ui-sref='contact' flex='' ui-sref-active='active' ng-click='close()')
+                h3 Contact us
+              md-divider
+            md-list-item
+              md-button.md-button.md-raised(ui-sref='info' flex='' ui-sref-active='active' ng-click='close()')
+                h3 Information
+              md-divider
+            div(ng-controller='BlogPostCtrl')
+              md-content
+                h4(style='text-align: center;') Recent blog Posts
+                md-card(ng-repeat='blog in posts')
+                  md-card-content
+                    p {{blog.text}}
+        div.md-whiteframe-z2(flex='', layout='column', tabindex='-1', role='main')
+          md-toolbar.md-whiteframe-z1(layout='row')
+            md-button#leftToggle(aria-label='Show Nav',  ng-controller="LeftNavCtrl", ng-click='toggleSidenav()' hide-gt-md='')
+              md-icon(md-svg-icon='images/angular-material/menu.svg')
+            //md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 12px')
+              ng-md-icon(icon="people" style="fill: white" size="30")
+          div.layout-padding#mainView(ui-view='')
 
 
 

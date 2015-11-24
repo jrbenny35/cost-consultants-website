@@ -47,3 +47,22 @@ module.controller('CarouselCtrl', ['$scope' , function ($scope) {
 
 
 }]);
+
+module.controller('BlogPostCtrl', ['$scope', function ($scope) {
+
+    $scope.posts = [
+        {
+            image: '',
+            text: 'Blog stuff from database, or Ghost blog api'
+        },
+        {
+            image: '',
+            text: 'Blog stuff from database, or Ghost blog api 2'
+        },
+        {
+            image: '',
+            text: 'Blog stuff from database, or Ghost blog api 3'
+        }
+    ]
+
+}]);

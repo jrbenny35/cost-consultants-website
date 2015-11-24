@@ -43,8 +43,8 @@ myApp.config(function ($stateProvider, $locationProvider) {
 
 myApp.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-        .primaryPalette('blue')
-        .accentPalette('pink');
+        .primaryPalette('teal')
+        .accentPalette('purple');
 
 });
 
