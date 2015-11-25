@@ -66,3 +66,9 @@ module.controller('BlogPostCtrl', ['$scope', function ($scope) {
     ]
 
 }]);
+
+module.controller('ContactCtrl', ['$scope', function ($scope) {
+
+
+
+}]);

@@ -36,27 +36,27 @@ div()
             hr
             p Hello world
   br
-  div#about(layout='column' flex)
+  div#about(layout='column' flex='')
     md-content
       md-toolbar.md-primary
         h1(style='text-align: center;') Brief overview
     br
     div(layout='row')
-      md-content
+      md-content(flex)
         md-card.md-padding(layout-gt-md='row' )
           img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg')
           md-card-content(flex-gt-md='65')
             p.
               Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal
     div(layout='row')
-      md-content
+      md-content(flex)
         md-card.md-padding(layout-gt-md='row')
           img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg' flex-order='2' flex-order-sm='1')
           md-card-content(flex-gt-md='65' flex-order='1' flex-order-sm='2')
             p.
               Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal
     div(layout='row')
-      md-content
+      md-content(flex)
         md-card.md-padding(layout-gt-md='row')
           img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg')
           md-card-content(flex-gt-md='65')

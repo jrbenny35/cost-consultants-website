@@ -22,19 +22,19 @@ html(ng-app='myApp')
               span.md-flex Cost Consultants
           md-list()#leftNav
             md-list-item
-              md-button.md-button.md-raised(ui-sref='/' flex='' ui-sref-active='active' ng-click='close()')
+              md-button.md-button(ui-sref='/' flex='' ui-sref-active='active' ng-click='close()')
                 h3 Home
               md-divider
             md-list-item
-              md-button.md-button.md-raised(ui-sref='about' flex='' ui-sref-active='active' ng-click='close()')
+              md-button.md-button(ui-sref='about' flex='' ui-sref-active='active' ng-click='close()')
                 h3 About
               md-divider
             md-list-item
-              md-button.md-button.md-raised(ui-sref='contact' flex='' ui-sref-active='active' ng-click='close()')
+              md-button.md-button(ui-sref='contact' flex='' ui-sref-active='active' ng-click='close()')
                 h3 Contact us
               md-divider
             md-list-item
-              md-button.md-button.md-raised(ui-sref='info' flex='' ui-sref-active='active' ng-click='close()')
+              md-button.md-button(ui-sref='info' flex='' ui-sref-active='active' ng-click='close()')
                 h3 Information
               md-divider
             br
@@ -43,7 +43,7 @@ html(ng-app='myApp')
                 h4(style='text-align: center;') Recent blog Posts
                 md-card(ng-repeat='blog in posts')
                   md-card-content
-                    p {{blog.text}}
+                    span {{blog.text}}
         div.md-whiteframe-z2(flex='', layout='column', tabindex='-1', role='main')
           md-toolbar.md-whiteframe-z1(layout='row')
             md-button#leftToggle(aria-label='Show Nav',  ng-controller="LeftNavCtrl", ng-click='toggleSidenav()' hide-gt-md='')

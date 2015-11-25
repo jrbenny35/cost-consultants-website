@@ -1,1 +1,32 @@
-h1 This is the contact page
+div()
+  md-content
+    md-card
+      md-card-content
+        h1 Inquire Within -
+        hr
+        h4 Please read and fill out the contact form below.
+        div()
+          form( name='contactForm' ng-controller="ContactCtrl", role="form" ng-submit="saveContact()")
+            md-content
+              md-input-container(style='width: 100%')
+                label First and Last Name
+                input( type='text' ng-maxlength='30' ng-minlength='3' md-maxlength='30' name='name' ng-model='contact.name' required)
+                div(ng-messages='contactForm.name.$error' ng-show='contactForm.name.$touched')
+                  span(ng-message='required') First and Last name is required
+                  span(ng-message='maxlength') Name must be less than 30 characters long
+                  span(ng-message='minlength') Name must be at least 3 characters long
+              br
+              md-input-container(style='width: 100%')
+                label Email
+                input( minlength='10' maxlength='25' name='email' ng-model='contact.email' ng-pattern='/^.+@.+\..+$/' required)
+                div(ng-messages='contactForm.email.$error' role='alert' ng-show='contactForm.email.$touched')
+                  span(ng-message='required') An email address is required
+                  span(ng-message-exp="['minlength', 'maxlength', 'pattern']") Invalid email
+              br
+              md-input-container(style='width: 100%')
+                label Inquiry
+                input(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )
+                div(ng-messages='contactForm.message.$error' ng-show='contactForm.message.$touched')
+                  span(ng-message='maxlength') Message is limited to 300 characters
+              br
+              md-button.md-raised.md-accent(type = "submit" ng-disabled='contactForm.$invalid') Submit

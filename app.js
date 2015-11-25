@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
+var mongoose = require('mongoose');
+var mongoLocal = ("mongodb://localhost/CostConsul");
 var app = express();
 
 // view engine setup
@@ -32,6 +34,12 @@ app.use(function (req, res, next) {
 //Load routes
 app.use(require('./routes'));
 
+mongoose.connect(process.env.MONGOLAB_URI || mongoLocal, function (error) {
+  if (error) console.error(error);
+  else console.log('mongo connected ');
+});
+
+mongoose.connection.once('open', function(){
 
 //Create and start server
 http.createServer(app).listen(app.get('port'), function(){
@@ -69,5 +77,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+});//End mongoose/server connection settings
 
 module.exports = app;
