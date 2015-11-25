@@ -14,8 +14,6 @@ We will come do a on-site evaluation of your warehouse operations, and present y
 
 ### Tech Stack
 
-Dillinger uses a number of open source projects to work properly:
-
 * [Node.js](http://www.nodejs.org): Powerful, server-side JavaScript.
 * [AngularJS](http://www.angularjs.org): Google's frontend framework. MVC, powerful, and really just AWESOME.
 * [Express](http://www.expressjs.com): A nice framework for node. Helps keep things pretty and is easy to use
