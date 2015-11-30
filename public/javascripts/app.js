@@ -50,6 +50,6 @@ myApp.config(function ($mdThemingProvider) {
 });
 
 //Resources
-//myApp.factory('Contact', function($resource) {
-//  return $resource('/api/contact/:id', { id: '@_id' }); //full endpoint address
-//});
+myApp.factory('Contact', function($resource) {
+  return $resource('/api/contact/:id', { id: '@_id' }); //full endpoint address
+});

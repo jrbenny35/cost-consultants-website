@@ -1,4 +1,4 @@
-div()
+div(ng-controller="ContactCtrl")
   md-content
     md-card
       md-card-content
@@ -6,7 +6,7 @@ div()
         hr
         h4 Please read and fill out the contact form below.
         div()
-          form( name='contactForm' ng-controller="ContactCtrl", role="form" ng-submit="saveContact()")
+          form( name='contactForm' role="form" ng-submit="saveContact()")
             md-content
               md-input-container(style='width: 100%')
                 label First and Last Name
@@ -38,5 +38,9 @@ div()
                 input(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )
                 div(ng-messages='contactForm.message.$error' ng-show='contactForm.message.$touched')
                   span(ng-message='maxlength') Message is limited to 300 characters
+              br
+              md-content
+                h4 Please select a date you would like for customer service to contact you.
+                md-datepicker(ng-model='contact.date' md-placeholder='Enter Date' required)
               br
               md-button.md-raised.md-accent(type = "submit" ng-disabled='contactForm.$invalid') Submit

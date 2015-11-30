@@ -5,7 +5,7 @@ var router = express.Router();
 var app = express();
 var nodemailer = require('nodemailer');
 
-var models = require('../models/contactModel');
+var models = require('../models/index');
 
 
 router.post('/contact', function(req, res){
@@ -17,7 +17,10 @@ router.post('/contact', function(req, res){
     contact = new models.contact({
         name: req.body.name,
         email: req.body.email,
-        message: req.body.message
+        message: req.body.message,
+        companyName: req.body.companyName,
+        number: req.body.number,
+        date: req.body.date
     });
 
     contact.save(function (err) {
@@ -27,7 +30,7 @@ router.post('/contact', function(req, res){
             return console.log(err);
         }
     });
-
+/*
     //Nodemailer email
     console.log('Nodemailer post ' + req.body);
 
@@ -57,7 +60,7 @@ router.post('/contact', function(req, res){
         transporter.close();
 
     });
-
+*/
 
     return res.send(contact);
 

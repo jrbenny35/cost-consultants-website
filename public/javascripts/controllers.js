@@ -59,8 +59,16 @@ module.controller('BlogPostCtrl', ['$scope', function ($scope) {
 
 }]);
 
-module.controller('ContactCtrl', ['$scope', function ($scope) {
+module.controller('ContactCtrl', ['$scope', 'Contact', function ($scope, Contact) {
+
+    $scope.contact = new Contact();
 
 
+    $scope.saveContact = function(){
+
+        $scope.contact.$save().then(function () {
+           $state.go('contact-thanks');
+        });
+    };
 
 }]);
