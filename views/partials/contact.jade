@@ -2,7 +2,7 @@ div()
   md-content
     md-card
       md-card-content
-        h1 Inquire Within -
+        h1 Inquire Within ~
         hr
         h4 Please read and fill out the contact form below.
         div()
@@ -15,14 +15,24 @@ div()
                   span(ng-message='required') First and Last name is required
                   span(ng-message='maxlength') Name must be less than 30 characters long
                   span(ng-message='minlength') Name must be at least 3 characters long
-              br
               md-input-container(style='width: 100%')
                 label Email
                 input( minlength='10' maxlength='25' name='email' ng-model='contact.email' ng-pattern='/^.+@.+\..+$/' required)
                 div(ng-messages='contactForm.email.$error' role='alert' ng-show='contactForm.email.$touched')
                   span(ng-message='required') An email address is required
                   span(ng-message-exp="['minlength', 'maxlength', 'pattern']") Invalid email
-              br
+              md-input-container(style='width: 100%')
+                label Phone Number ( With Dashes )
+                input( type='tel' ng-minlength='12' ng-maxlength='20' name='number' ng-model='contact.number' required)
+                div(ng-messages='contactForm.number.$error' role='alert' ng-show='contactForm.number.$touched')
+                  span(ng-message='required') A phone number is required
+                  span(ng-message='maxlength') Phone number is too long
+                  span(ng-message='minlength') Phone number must include dashes
+              md-input-container
+                label Company Name
+                input(type='text' name='companyName' ng-maxlength='40' ng-model='contact.companyName')
+                div(ng-messages='contactForm.companyName.$error' role='alert' ng-show='contactForm.companyName.$touched')
+                  span(ng-message='maxlength') Company Name is limited to 40 characters
               md-input-container(style='width: 100%')
                 label Inquiry
                 input(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )

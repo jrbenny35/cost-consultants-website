@@ -54,14 +54,6 @@ module.controller('BlogPostCtrl', ['$scope', function ($scope) {
         {
             image: '',
             text: 'Blog stuff from database, or Ghost blog api'
-        },
-        {
-            image: '',
-            text: 'Blog stuff from database, or Ghost blog api 2'
-        },
-        {
-            image: '',
-            text: 'Blog stuff from database, or Ghost blog api 3'
         }
     ]
 

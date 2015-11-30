@@ -16,7 +16,7 @@ html(ng-app='myApp')
     md-content#mainContainer
       div(layout='row')
         md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', layout='column' md-is-locked-open="$mdMedia('gt-md')")
-          md-toolbar.md-whiteframe-z1.md-tall
+          md-toolbar().md-whiteframe-z1.md-tall
             span(flex='')
             h2.md-toolbar-tools.md-toolbar-tools-bottom
               span.md-flex Cost Consultants
@@ -41,7 +41,7 @@ html(ng-app='myApp')
             div(ng-controller='BlogPostCtrl')
               md-content
                 h4(style='text-align: center;') Recent blog Posts
-                md-card(ng-repeat='blog in posts')
+                md-card(ng-repeat='blog in posts' style='min-height: 300px;')
                   md-card-content
                     span {{blog.text}}
         div.md-whiteframe-z2(flex='', layout='column', tabindex='-1', role='main')
