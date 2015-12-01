@@ -1,0 +1,58 @@
+html, body {
+  font-size: 18px;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+hr {
+  border-bottom: 1px solid #ba68c8;
+}
+
+#mainView {
+  max-height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  overflow: scroll;
+  padding-bottom: 75px;
+  background-color: #f1f1f1;
+}
+
+#mainContainer {
+  overflow: hidden;
+}
+
+#leftNav .md-button {
+  margin: 8px;
+  padding: 10px;
+}
+#leftNav .active {
+  background-color: #ba68c8;
+  color: white;
+}
+
+#homeLayout md-card {
+  min-height: 400px;
+  max-height: 400px;
+}
+
+#homeCarousel .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#homeCarousel .carousel-caption h1 {
+  color: white;
+}
+#homeCarousel img {
+  margin: auto;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#about .md-card-image {
+  margin: auto;
+  height: 200px;
+  width: auto;
+}
+
+/* ------------ Contact Page ---------- */

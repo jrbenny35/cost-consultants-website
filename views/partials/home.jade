@@ -1,5 +1,5 @@
 div()
-  div(layout='column')
+  div(layout='column' flex layout-align='center center')
     //md-content
       md-card
         h1(style='text-align: center;') Big Callout
@@ -9,7 +9,7 @@ div()
           div#homeCarousel(ng-controller='CarouselCtrl')
             uib-carousel(interval='myInterval', no-wrap='noWrapSlides')
               uib-slide(ng-repeat='slide in slides', active='slide.active')
-                img(ng-src='{{slide.image}}', style='margin:auto;')
+                img.img-responsive(ng-src='{{slide.image}}', style='margin:auto;')
                 md-content.carousel-caption
                   h4 Slide {{$index}}
                   h1 {{slide.text}}
@@ -19,7 +19,7 @@ div()
       md-toolbar.md-primary
         h1(style='text-align: center;') Website Features
       br
-      div(layout='row' flex)
+      div(layout-gt-md='row' flex)
         md-card(flex)
           h1(style='text-align: center;') Cost Consultants
           md-card-content

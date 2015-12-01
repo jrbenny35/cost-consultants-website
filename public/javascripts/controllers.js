@@ -32,15 +32,15 @@ module.controller('CarouselCtrl', ['$scope' , function ($scope) {
     $scope.myInterval = 5000;
     $scope.slides = [
         {
-            image: './images/warehouse.jpg',
+            image: './images/warehouse-edit.jpg',
             text: 'Cost Consultants!'
         },
         {
-            image: './images/warehouse-2.jpg',
+            image: './images/warehouse-2-edit.jpg',
             text: 'Slide 2'
         },
         {
-            image: './images/warehouse-management-system-wms.jpg',
+            image: './images/warehouse-management-system-wms-edit.jpg',
             text: 'Slide 3'
         }
     ];
