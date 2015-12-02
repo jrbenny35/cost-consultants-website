@@ -20,7 +20,10 @@ router.post('/contact', function(req, res){
         message: req.body.message,
         companyName: req.body.companyName,
         number: req.body.number,
-        date: req.body.date
+        date: req.body.date,
+        city: req.body.city,
+        state: req.body.state,
+        zip: req.body.zip
     });
 
     contact.save(function (err) {

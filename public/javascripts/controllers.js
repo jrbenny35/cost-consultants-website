@@ -63,6 +63,16 @@ module.controller('ContactCtrl', ['$scope', 'Contact', function ($scope, Contact
 
     $scope.contact = new Contact();
 
+    //States
+    $scope.contact.state = 'FL';
+
+    //if($scope.defaultState != 'FL')
+       //$scope.contact.state = $scope.defaultState;
+        //else{$scope.contact.state = 'FL';}
+
+    $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
+    'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
+    'WY').split(' ').map(function (state) { return { abbrev: state }; });
 
     $scope.saveContact = function(){
 
@@ -70,5 +80,7 @@ module.controller('ContactCtrl', ['$scope', 'Contact', function ($scope, Contact
            $state.go('contact-thanks');
         });
     };
+
+
 
 }]);

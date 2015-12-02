@@ -33,6 +33,18 @@ var contactSchema = new Schema({
     date:{
         type: String,
         require: true
+    },
+    zip:{
+        type: String,
+        require: true
+    },
+    city:{
+        type: String,
+        require: true
+    },
+    state:{
+        type: String,
+        require: true
     }
 });
 

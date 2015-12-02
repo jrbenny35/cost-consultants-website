@@ -8,37 +8,58 @@ div(ng-controller="ContactCtrl")
         div()
           form( name='contactForm' role="form" ng-submit="saveContact()")
             md-content
-              md-input-container(style='width: 100%')
-                label First and Last Name
-                input( type='text' ng-maxlength='30' ng-minlength='3' md-maxlength='30' name='name' ng-model='contact.name' required)
-                div(ng-messages='contactForm.name.$error' ng-show='contactForm.name.$touched')
-                  span(ng-message='required') First and Last name is required
-                  span(ng-message='maxlength') Name must be less than 30 characters long
-                  span(ng-message='minlength') Name must be at least 3 characters long
-              md-input-container(style='width: 100%')
-                label Email
-                input( minlength='10' maxlength='25' name='email' ng-model='contact.email' ng-pattern='/^.+@.+\..+$/' required)
-                div(ng-messages='contactForm.email.$error' role='alert' ng-show='contactForm.email.$touched')
-                  span(ng-message='required') An email address is required
-                  span(ng-message-exp="['minlength', 'maxlength', 'pattern']") Invalid email
-              md-input-container(style='width: 100%')
-                label Phone Number ( With Dashes )
-                input( type='tel' ng-minlength='12' ng-maxlength='20' name='number' ng-model='contact.number' required)
-                div(ng-messages='contactForm.number.$error' role='alert' ng-show='contactForm.number.$touched')
-                  span(ng-message='required') A phone number is required
-                  span(ng-message='maxlength') Phone number is too long
-                  span(ng-message='minlength') Phone number must include dashes
-              md-input-container
-                label Company Name
-                input(type='text' name='companyName' ng-maxlength='40' ng-model='contact.companyName')
-                div(ng-messages='contactForm.companyName.$error' role='alert' ng-show='contactForm.companyName.$touched')
-                  span(ng-message='maxlength') Company Name is limited to 40 characters
-              md-input-container(style='width: 100%')
-                label Inquiry
-                input(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )
-                div(ng-messages='contactForm.message.$error' ng-show='contactForm.message.$touched')
-                  span(ng-message='maxlength') Message is limited to 300 characters
-              br
+              div(layout='row' layout-margin layout-padding)
+                div(flex='50' layout='column')
+                  md-input-container(style='width: 100%')
+                    label First and Last Name
+                    input( type='text' ng-maxlength='30' ng-minlength='3' md-maxlength='30' name='name' ng-model='contact.name' required)
+                    div(ng-messages='contactForm.name.$error' ng-show='contactForm.name.$touched')
+                      span(ng-message='required') First and Last name is required
+                      span(ng-message='maxlength') Name must be less than 30 characters long
+                      span(ng-message='minlength') Name must be at least 3 characters long
+                  md-input-container(style='width: 100%')
+                    label Email
+                    input( minlength='10' maxlength='25' name='email' ng-model='contact.email' ng-pattern='/^.+@.+\..+$/' required)
+                    div(ng-messages='contactForm.email.$error' role='alert' ng-show='contactForm.email.$touched')
+                      span(ng-message='required') An email address is required
+                      span(ng-message-exp="['minlength', 'maxlength', 'pattern']") Invalid email
+                  md-input-container(style='width: 100%')
+                    label Phone Number ( With Dashes )
+                    input( type='tel' ng-minlength='12' ng-maxlength='20' name='number' ng-model='contact.number' required)
+                    div(ng-messages='contactForm.number.$error' role='alert' ng-show='contactForm.number.$touched')
+                      span(ng-message='required') A phone number is required
+                      span(ng-message='maxlength') Phone number is too long
+                      span(ng-message='minlength') Phone number must include dashes
+                  md-input-container
+                    label Company Name
+                    input(type='text' name='companyName' ng-maxlength='40' ng-model='contact.companyName')
+                    div(ng-messages='contactForm.companyName.$error' role='alert' ng-show='contactForm.companyName.$touched')
+                      span(ng-message='maxlength') Company Name is limited to 40 characters
+                div(flex layout='column')
+                  div(layout='row' layout-padding).layout-row
+                    md-input-container()
+                      label City
+                      input(type='text' name='city' ng-maxlength='25' ng-model='contact.city')
+                      div(ng-messages='contactForm.city.$error' role='alert' ng-show='contactForm.city.$touched')
+                        span(ng-message='maxlength') City name is limited to 25 Characters
+                    md-input-container()
+                      label State
+                      md-select(ng-model='contact.state')
+                        md-option(ng-repeat='state in states' value='{{state.abbrev}}')
+                          {{state.abbrev}}
+                    md-input-container()
+                      label Zip Code
+                      input(type='text' name='zip' ng-maxlength='5' ng-minlength='5' ng-model='contact.zip')
+                      div(ng-messages='contactForm.zip.$error' ng-show='contactForm.zip.$touched')
+                        span(ng-message='maxlength') Zip Code is too long
+                        span(ng-message='minlength') Zip Code must be at least 5 numbers
+                  div()
+                    md-input-container(style='width: 100%')
+                      label Inquiry
+                      input(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )
+                      div(ng-messages='contactForm.message.$error' ng-show='contactForm.message.$touched')
+                        span(ng-message='maxlength') Message is limited to 300 characters
+                  br
               md-content
                 h4 Please select a date you would like for customer service to contact you.
                 md-datepicker(ng-model='contact.date' md-placeholder='Enter Date' required)
