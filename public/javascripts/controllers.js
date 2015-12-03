@@ -59,12 +59,13 @@ module.controller('BlogPostCtrl', ['$scope', function ($scope) {
 
 }]);
 
-module.controller('ContactCtrl', ['$scope', 'Contact', function ($scope, Contact) {
+module.controller('ContactCtrl', ['$scope', 'Contact', '$state', function ($scope, Contact, $state) {
 
     $scope.contact = new Contact();
 
     //States
     $scope.contact.state = 'FL';
+    $scope.contact.date = new Date();
 
     //if($scope.defaultState != 'FL')
        //$scope.contact.state = $scope.defaultState;

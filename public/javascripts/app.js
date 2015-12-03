@@ -37,6 +37,10 @@ myApp.config(function ($stateProvider, $locationProvider) {
         .state('info', {
             url: '/info',
             templateUrl: 'partials/info'
+        })
+        .state('contact-thanks', {
+            url: '/thanks',
+            templateUrl: 'partials/contact-thanks'
         });
 
     $locationProvider.html5Mode(true);

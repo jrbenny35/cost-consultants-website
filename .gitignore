@@ -19,4 +19,4 @@ npm-debug.log
 public/javascripts/deploy/*
 public/javascripts/vendor/*
 !package.json
-.travis.yml
+orbit-root
