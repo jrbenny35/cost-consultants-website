@@ -3,6 +3,13 @@ node_js:
 - 5.0.0
 services:
 - mongodb
+addons:
+  apt:
+    packages:
+      - g++-4.8
+env:
+  global:
+    - CXX=g++-4.8
 before_install:
 - npm install -g bower
 - npm install -g protractor@3.0.0
