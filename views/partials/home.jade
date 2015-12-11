@@ -1,64 +1,55 @@
 div()
-  div(layout='column' flex layout-align='center center')
-    //md-content
-      md-card
-        h1(style='text-align: center;') Big Callout
-    md-content
-      md-card
-        md-card-content
-          div#homeCarousel(ng-controller='CarouselCtrl')
-            uib-carousel(interval='myInterval', no-wrap='noWrapSlides')
-              uib-slide(ng-repeat='slide in slides', active='slide.active')
-                img.img-responsive(ng-src='{{slide.image}}', style='margin:auto;')
-                md-content.carousel-caption
-                  h4 Slide {{$index}}
-                  h1 {{slide.text}}
-  br
-  div#homeLayout()
-    md-content
-      md-toolbar.md-primary
-        h1(style='text-align: center;') Website Features
-      br
-      div(layout-gt-md='row' flex)
-        md-card(flex)
-          h1(style='text-align: center;') Cost Consultants
-          md-card-content
-            hr
-            p Hello world
-        md-card(flex)
-          h1(style='text-align: center;') Cost Consultants
-          md-card-content
-            hr
-            p Hello world
-        md-card(flex)
-          h1(style='text-align: center;') Cost Consultants
-          md-card-content
-            hr
-            p Hello world
-  br
-  div#about(layout='column' flex='')
-    md-content
-      md-toolbar.md-primary
-        h1(style='text-align: center;') Brief overview
+  md-content
+    div(layout='column' flex layout-align='center center')
+      div.img-div( layout='column' layout-align='center center')
+        md-content(layout-padding)
+          h1 Cost Consultants!
     br
-    div(layout='row')
-      md-content(flex)
-        md-card.md-padding(layout-gt-md='row' )
-          img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg')
-          md-card-content(flex-gt-md='65')
-            p.
-              Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal
-    div(layout='row')
-      md-content(flex)
-        md-card.md-padding(layout-gt-md='row')
-          img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg' flex-order='2' flex-order-sm='1')
-          md-card-content(flex-gt-md='65' flex-order='1' flex-order-sm='2')
-            p.
-              Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal
-    div(layout='row')
-      md-content(flex)
-        md-card.md-padding(layout-gt-md='row')
-          img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg')
-          md-card-content(flex-gt-md='65')
-            p.
-              Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal
+    div#homeLayout()
+      md-content
+        md-toolbar.md-primary
+          h1(style='text-align: center;') Website Features
+        br
+        div(layout-gt-md='row' flex)
+          md-card(flex)
+            h1(style='text-align: center;') Cost Consultants
+            md-card-content
+              hr
+              p Hello world
+          md-card(flex)
+            h1(style='text-align: center;') Cost Consultants
+            md-card-content
+              hr
+              p Hello world
+          md-card(flex)
+            h1(style='text-align: center;') Cost Consultants
+            md-card-content
+              hr
+              p Hello world
+    br
+    div#about(layout='column' flex='')
+      md-content
+        md-toolbar.md-primary
+          h1(style='text-align: center;') Brief overview
+      br
+      div(layout='row')
+        md-content(flex)
+          div.md-padding(layout-gt-md='row' )
+            img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg')
+            div(flex-gt-md='65')
+              p.
+                Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal
+      div(layout='row')
+        md-content(flex)
+          div.md-padding(layout-gt-md='row')
+            img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg' flex-order='2' flex-order-sm='1')
+            div(flex-gt-md='65' flex-order='1' flex-order-sm='2')
+              p.
+                Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal
+      div(layout='row')
+        md-content(flex)
+          div.md-padding(layout-gt-md='row')
+            img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg')
+            div(flex-gt-md='65')
+              p.
+                Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal

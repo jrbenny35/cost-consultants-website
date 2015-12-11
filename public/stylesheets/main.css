@@ -36,6 +36,20 @@ hr {
   max-height: 400px;
 }
 
+#homeCarousel .img-div {
+  width: 100%;
+  max-height: 500px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#homeCarousel .img-div md-content {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#homeCarousel h1 {
+  color: white;
+  font-size: 75px;
+}
 #homeCarousel .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -45,7 +59,7 @@ hr {
 #homeCarousel img {
   margin: auto;
   width: 100%;
-  height: auto;
+  max-height: 500px;
   display: block;
 }
 
@@ -54,5 +68,55 @@ hr {
   height: 200px;
   width: auto;
 }
+#about .img-div {
+  background-image: url("/images/Black_background-2.jpg");
+  background-position: center;
+  width: 100%;
+  min-height: 500px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#about .img-div md-content {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#about h1 {
+  color: white;
+  font-size: 75px;
+}
 
 /* ------------ Contact Page ---------- */
+.img-div {
+  background-image: url("/images/Black_background-2.jpg");
+  background-position: center;
+  width: 100%;
+  min-height: 500px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.img-div md-content {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.img-div h1 {
+  color: white;
+  font-size: 75px;
+}
+
+/* ------------ Info Page ------------- */
+.img-div {
+  background-image: url("/images/Black_background-2.jpg");
+  background-position: center;
+  width: 100%;
+  min-height: 500px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.img-div md-content {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.img-div h1 {
+  color: white;
+  font-size: 75px;
+}
