@@ -60,9 +60,8 @@ div(ng-controller="ContactCtrl")
                     input(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )
                     div(ng-messages='contactForm.message.$error' ng-show='contactForm.message.$touched')
                       span(ng-message='maxlength') Message is limited to 300 characters
-                br
-            md-content(layout-padding)
-              h4 Please select a date you would like for customer service to contact you.
-              md-datepicker(ng-model='contact.date' md-placeholder='Enter Date')
-            br
-            md-button.md-raised.md-accent#submitBtn(type = "submit" ng-disabled='contactForm.$invalid') Submit
+                md-content(layout-padding)
+                  h4 Please select a date you would like for customer service to contact you.
+                  md-datepicker(ng-model='contact.date' md-placeholder='Enter Date')
+                  br
+                  md-button.md-raised.md-accent#submitBtn( ui-sref='contact-thanks' type = "submit" ng-disabled='contactForm.$invalid' style='margin-bottom: 50px;') Submit

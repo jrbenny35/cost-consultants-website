@@ -69,7 +69,7 @@ describe('Cost Consultants website', function () {
         element(by.id('contact'))
             .element(by.tagName('md-datepicker'))
             .click()
-            .sendKeys('12/4/2016');
+            .sendKeys('12/12/2016');
         element(by.id('contact'))
             .element(by.css('.md-raised'))
             .click();
