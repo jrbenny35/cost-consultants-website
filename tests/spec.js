@@ -42,9 +42,7 @@ describe('Cost Consultants website', function () {
 
     /* Test Form */
     it('should allow form input and validate', function () {
-        element(by.css('.md-sidenav-left')).all(by.tagName('h3'))
-            .get(2)
-            .click();
+        browser.get('http://localhost:3000/contact');
         element(by.id('contact')).all(by.tagName('input'))
             .get(0)
             .sendKeys('Protractor Form Test');
@@ -70,6 +68,10 @@ describe('Cost Consultants website', function () {
             .element(by.tagName('md-datepicker'))
             .click()
             .sendKeys('12/12/2016');
+        element(by.tagName('form'))
+            .element(by.id('submitBtn'))
+            .click();
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/thanks');
     });
 
 }); //End main test function
