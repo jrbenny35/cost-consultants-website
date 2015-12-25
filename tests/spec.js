@@ -70,10 +70,6 @@ describe('Cost Consultants website', function () {
             .element(by.tagName('md-datepicker'))
             .click()
             .sendKeys('12/12/2016');
-        element(by.tagName('form'))
-            .element(by.id('submitBtn'))
-            .click();
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/thanks');
     });
 
 }); //End main test function
