@@ -45,24 +45,31 @@ describe('Cost Consultants website', function () {
         browser.get('http://localhost:3000/contact');
         element(by.id('contact')).all(by.tagName('input'))
             .get(0)
+            .click()
             .sendKeys('Protractor Form Test');
         element(by.id('contact')).all(by.tagName('input'))
             .get(1)
+            .click()
             .sendKeys('test@example.com');
         element(by.id('contact')).all(by.tagName('input'))
             .get(2)
+            .click()
             .sendKeys('999-999-9999');
         element(by.id('contact')).all(by.tagName('input'))
             .get(3)
+            .click()
             .sendKeys('Protractor Test');
         element(by.id('contact')).all(by.tagName('input'))
             .get(4)
+            .click()
             .sendKeys('Orlando Test');
         element(by.id('contact')).all(by.tagName('input'))
             .get(5)
+            .click()
             .sendKeys('32223');
         element(by.id('contact')).all(by.tagName('input'))
             .get(6)
+            .click()
             .sendKeys('This is a test from Protractor');
         element(by.id('contact'))
             .element(by.tagName('md-datepicker'))
