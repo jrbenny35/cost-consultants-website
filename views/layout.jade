@@ -8,7 +8,7 @@ html(ng-app='myApp')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css',
       integrity='sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==', crossorigin='anonymous')
-    link(rel='stylesheet', href='https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.css')
+    link(rel='stylesheet', href='https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc7/angular-material.min.css')
     link(rel='stylesheet', href='/javascripts/vendor/hover/css/hover.css')
     link(rel='stylesheet', href='/dist/stylesheets/main.min.css')
     base(href='/')
@@ -40,9 +40,10 @@ html(ng-app='myApp')
             br
             div(ng-controller='BlogPostCtrl')
               md-content
-                h4(style='text-align: center;') Recent blog Posts
-                md-card(ng-repeat='blog in posts' style='min-height: 300px;')
-                  md-card-content
+                div(ng-repeat='blog in posts' style='min-height: 400px;')
+                  div(layout-padding)
+                    h4(style='text-align: center;') Recent blog Posts
+                    hr
                     span {{blog.text}}
         div.md-whiteframe-z2(flex='', layout='column', tabindex='-1', role='main')
           md-toolbar.md-whiteframe-z1(layout='row')
@@ -50,8 +51,7 @@ html(ng-app='myApp')
               md-icon(md-svg-icon='images/angular-material/menu.svg')
             //md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 12px')
               ng-md-icon(icon="people" style="fill: white" size="30")
-          div.layout-padding#mainView(ui-view='')
-
+          div#mainView(ui-view='' layout='column')
 
 
 

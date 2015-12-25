@@ -9,8 +9,8 @@ div(ng-controller="ContactCtrl")
       div(ayout-padding)
         form#contact( name='contactForm' role="form" ng-submit="saveContact()")
           md-content
-            div(layout='row' layout-margin layout-padding)
-              div(flex='50' layout='column')
+            div(layout-gt-lg='row' layout-margin layout-padding)
+              div(flex-gt-lg='50' layout='column')
                 md-input-container(style='width: 100%')
                   label First and Last Name
                   input( type='text' ng-maxlength='30' ng-minlength='3' md-maxlength='30' name='name' ng-model='contact.name' required)

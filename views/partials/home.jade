@@ -1,55 +1,58 @@
-div()
+div()#homeLayout()
   md-content
     div(layout='column' flex layout-align='center center')
       div.img-div( layout='column' layout-align='center center')
         md-content(layout-padding)
           h1 Cost Consultants!
     br
-    div#homeLayout()
+    div
       md-content
-        md-toolbar.md-primary
-          h1(style='text-align: center;') Website Features
-        br
-        div(layout-gt-md='row' flex)
+        div(layout-gt-md='row' flex style='margin-top: 50px;')
           md-card(flex)
-            h1(style='text-align: center;') Cost Consultants
-            md-card-content
+            md-card-title
+              md-card-title-text
+                h1(style='text-align: center;') Who are we?
+            md-card-content.md-card-content
               hr
-              p Hello world
+              p.
+                We are a Warehouse Setup and Management Firm! We can setup and initialize your warehouse for maximum productivity and efficiency!
+                Click the link for more information!
+            div(layout='column' layout-align='end start')
+              md-card-actions(layout='row')
+                md-button(style='font-size: 18px;' ui-sref='info').md-primary.md-button Information
+                a(ui-sref='info' style='padding-top: 6px;')
+                  ng-md-icon(icon='keyboard_arrow_right' size='22' style='fill: #4CAF50')
           md-card(flex)
-            h1(style='text-align: center;') Cost Consultants
-            md-card-content
+            md-card-title
+              md-card-title-text
+                h1(style='text-align: center;') Give us a Call
+            md-card-content.md-card-content
               hr
-              p Hello world
+              p Don't hesitate to call us during normal business hours!
+            div(layout='column' layout-align='end start')
+              md-card-actions(layout='row')
+                md-button(style='font-size: 18px;').md-primary.md-button 999-999-9999
+                a(style='padding-top: 6px;')
+                  ng-md-icon(icon='phone' size='20' style='fill: #4CAF50')
           md-card(flex)
-            h1(style='text-align: center;') Cost Consultants
-            md-card-content
+            md-card-title
+              md-card-title-text
+                h1(style='text-align: center;') Have us Contact you
+            md-card-content.md-card-content
               hr
-              p Hello world
+              p Afraid you'll forget our number? No worries, fill out our brief contact form and we will get in touch with you at your best time!
+            div(layout='column' layout-align='end start')
+              md-card-actions(layout='row')
+                md-button(style='font-size: 18px;' ui-sref='contact').md-primary.md-button Contact Form
+                a(ui-sref='contact' style='padding-top: 6px;')
+                  ng-md-icon(icon='keyboard_arrow_right' size='22' style='fill: #4CAF50')
+
     br
-    div#about(layout='column' flex='')
-      md-content
-        md-toolbar.md-primary
-          h1(style='text-align: center;') Brief overview
+    div#homeExp(layout='column' flex='')
       br
-      div(layout='row')
-        md-content(flex)
-          div.md-padding(layout-gt-md='row' )
-            img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg')
-            div(flex-gt-md='65')
-              p.
-                Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal
-      div(layout='row')
-        md-content(flex)
-          div.md-padding(layout-gt-md='row')
-            img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg' flex-order='2' flex-order-sm='1')
-            div(flex-gt-md='65' flex-order='1' flex-order-sm='2')
-              p.
-                Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal
-      div(layout='row')
-        md-content(flex)
-          div.md-padding(layout-gt-md='row')
-            img.md-card-image(src='images/black-leather-texture-hd-free-wallpaper_1242103205.jpg')
-            div(flex-gt-md='65')
-              p.
-                Hello. Something cool about the website will go here, maybe some marketing text, something attractive but not too informal
+      hr
+      div.img-div( layout='column' layout-align='center end')
+        md-content(layout-padding)
+          h1 Experience
+          p.
+            With over 20 Years of experience, Benny Forehand Knows his stuff

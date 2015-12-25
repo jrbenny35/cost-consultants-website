@@ -2,13 +2,13 @@ language: node_js
 node_js:
 - 5.0.0
 env:
-  - CXX=g++-4.8
+- CXX=g++-4.8
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.
+    - g++-4.
 services:
 - mongodb
 before_install:
@@ -17,7 +17,8 @@ before_install:
 - sudo apt-get install ruby-full
 - gem install compass --version ="1.0.3"
 - gem install sass --version ="3.4.18"
-- /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1920x1080x24
+- /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile
+  --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1920x1080x24
 install:
 - npm install
 - bower install
@@ -31,5 +32,8 @@ before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - sleep 5
-script:
-  npm test
+script: npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: C5YSTUG6jI8273FY1a/7d4zbJ7zLhiBTac+8d9EkfFyA+EdSXkMrcZ24IZri7gbaEK3H7OrRO+N8tZHzK6L9Rs8+vSGJIJKZGmYr2oAhQeUDVl5Hr6IDLUZEOLMnS95WNUQuVZpN8IzS/wpWWfMCKjbWVmWYT697OnX5J4PimRR4TqTM6Ll78hPQC58zfsb9tExSOirCboH4q5D71Do+d5FaFN9dfd46tNtJ++9uk+j37nNTVblUrdPKYYOOApMB8BWGDSq0wsKF2tMtymsLphZWfEUbxq2wbZracxw35eAnzSJu1GlXOw8nGEKnCLgobNZOHQNIzN/XF1Lid88tlE8yDf2wfnncGNDMgKgaxoN32ybLsAsVCXmlJGa4N4hHpUxzbOccGg099kslF0J51cVBqKtfuAjD2lLjgAuuVdzlX35RVsiElaCpEdtQ2UayuUTSL5Tjfc2JkRr//Mlwio6rQJj/F61mEM1d/XgtW2wkSPcm22vYZIkhsUrp9UxlDeZ+CFt6ykjGZmo0fZBZ5eT5Xx595P7HaSVbUGz2uFrLawOe/WJ+h504++rYmub4Hhwy6xRGNy/33oX/9XXze5foKstAmDWLhvPZQY8NLJE4w+amdh2IYwUEJe61770Yj4rqvPFwgN1GDbAQQ31mKCp9QzNeOfTtvHKUtM5IEbE=
