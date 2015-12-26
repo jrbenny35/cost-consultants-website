@@ -11,7 +11,7 @@ describe('Cost Consultants website', function () {
     });
 /*
     /* Nav Links */
-
+    
     it('should load navigation links', function () {
         element(by.css('.md-sidenav-left')).all(by.tagName('h3'))
             .get(0)
@@ -41,11 +41,19 @@ describe('Cost Consultants website', function () {
     });
 
     /* Test Form */
+
+
     it('should allow form input and validate', function () {
+
         browser.get('http://localhost:3000/contact');
-        element(by.id('contact')).all(by.tagName('input'))
-            .get(0)
-            .click()
+
+        var EC = protractor.ExpectedConditions;
+        var input = element(by.id('contact')).element(by.tagName('input'));
+        console.log(input);
+        var isVisible = EC.visibilityOf(input);
+
+        browser.wait(isVisible, 10000);
+            input.click()
             .sendKeys('Protractor Form Test');
         element(by.id('contact')).all(by.tagName('input'))
             .get(1)

@@ -46,8 +46,7 @@ div(ng-controller="ContactCtrl")
                   md-input-container()
                     label State
                     md-select(ng-model='contact.state')
-                      md-option(ng-repeat='state in states' value='{{state.abbrev}}')
-                        {{state.abbrev}}
+                      md-option(ng-repeat='state in states' value='{{state.abbrev}}') {{state.abbrev}}
                   md-input-container()
                     label Zip Code
                     input(type='text' name='zip' ng-maxlength='5' ng-minlength='5' ng-model='contact.zip')

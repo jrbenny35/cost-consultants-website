@@ -5,13 +5,6 @@ exports.config = {
     capabilities: {
         browserName: 'firefox'
     },
-    /**
-    multiCapabilities: [{
-        browserName: 'firefox'
-    }, {
-        browserName: 'chrome'
-    }],
-    **/
     onPrepare: function() {
         browser.driver.manage().window().maximize();
     }
