@@ -1,11 +1,11 @@
-div()#homeLayout()
+div()#homeLayout
   md-content
     div(layout='column' flex layout-align='center center')
       div.img-div( layout='column' layout-align='center center')
         md-content(layout-padding)
           h1 Cost Consultants!
     br
-    div
+    div.container
       md-content
         div(layout-gt-md='row' flex style='margin-top: 50px;')
           md-card(flex)
@@ -52,7 +52,7 @@ div()#homeLayout()
       br
       hr
       div.img-div( layout='column' layout-align='center end')
-        md-content(layout-padding)
-          h1 Experience
+        md-content( layout-padding)
+          h1(hide-xs hide-sm) Experience
           p.
             With over 20 Years of experience, Benny Forehand Knows his stuff

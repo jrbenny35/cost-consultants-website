@@ -20,12 +20,6 @@ module.exports = function(grunt){
                 }
             }
         },
-        watch:{
-            css: {
-                files: ['**/*.scss', '**/*.sass'],
-                tasks: ['sass', 'cssmin']
-            }
-        },
         cssmin: {
             target: {
                 files: [{
@@ -35,6 +29,25 @@ module.exports = function(grunt){
                     dest: 'public/dist/stylesheets',
                     ext: '.min.css'
                 }]
+            }
+        },
+        watch:{
+            css: {
+                files: ['**/*.scss', '**/*.sass'],
+                tasks: ['sass', 'cssmin']
+            }
+        },
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : [
+                        'public/dist/stylesheets/main.min.css'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    proxy: 'localhost:3000'
+                }
             }
         },
         uglify :{
@@ -67,11 +80,13 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-browser-sync');
 
     //Grunt tasks
     grunt.registerTask('build',['sass', 'cssmin', 'concat', 'uglify']);
     grunt.registerTask('default',['build']);
     grunt.registerTask('style', ['sass', 'cssmin']);
+    grunt.registerTask('browser', ['browserSync', 'watch'])
 
 
 };

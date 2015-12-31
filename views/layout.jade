@@ -13,7 +13,7 @@ html(ng-app='myApp')
   body(layout='column')
     md-content#mainContainer
       div(layout='row')
-        md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', layout='column' md-is-locked-open="$mdMedia('gt-md')")
+        md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', layout='column')
           md-toolbar().md-whiteframe-z1.md-tall
             span(flex='')
             h2.md-toolbar-tools.md-toolbar-tools-bottom
@@ -44,11 +44,28 @@ html(ng-app='myApp')
                     hr
                     span {{blog.text}}
         div.md-whiteframe-z2(flex='', layout='column', tabindex='-1', role='main')
-          md-toolbar.md-whiteframe-z1(layout='row')
+          md-toolbar.md-whiteframe-z1(layout='row' hide-gt-lg )
             md-button#leftToggle(aria-label='Show Nav',  ng-controller="LeftNavCtrl", ng-click='toggleSidenav()' hide-gt-md='')
               md-icon(md-svg-icon='images/angular-material/menu.svg')
             //md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 12px')
               ng-md-icon(icon="people" style="fill: white" size="30")
+          md-toolbar#topnav.md-whiteframe-z2(layout='row' hide-xs hide-sm hide-md hide-lg )
+            div(style='margin: auto;' layout='row' layout-align='center center' layout-padding)
+              md-list-item
+                md-button.md-button(ui-sref='/' flex='' ui-sref-active='active' ng-click='close()')
+                  h3 Home
+              md-list-item
+                md-button.md-button(ui-sref='about' flex='' ui-sref-active='active' ng-click='close()')
+                  h3 About
+              md-list-item
+                md-button.md-button(ui-sref='contact' flex='' ui-sref-active='active' ng-click='close()')
+                  h3 Contact us
+              md-list-item
+                md-button.md-button(ui-sref='info' flex='' ui-sref-active='active' ng-click='close()')
+                  h3 Information
+              md-list-item
+                md-button.md-button(ui-sref='blog' flex='' ui-sref-active='active' ng-click='close()')
+                  h3 Blog
           div#mainView(ui-view='' layout='column')
 
 
