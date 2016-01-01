@@ -44,7 +44,8 @@ myApp.config(function ($stateProvider, $locationProvider) {
         })
         .state('blog', {
             url: '/blog',
-            templateUrl: 'partials/blog'
+            templateUrl: 'partials/blog',
+            controller: 'BlogCtrl'
         });
 
     $locationProvider.html5Mode(true);

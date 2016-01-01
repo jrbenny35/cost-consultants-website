@@ -5,7 +5,7 @@ var router = express.Router();
 var app = express();
 var nodemailer = require('nodemailer');
 
-var models = require('../models/index');
+var models = require('../../models/index');
 
 
 router.post('/contact', function(req, res){

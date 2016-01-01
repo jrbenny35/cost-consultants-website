@@ -59,6 +59,25 @@ module.controller('BlogPostCtrl', ['$scope', function ($scope) {
 
 }]);
 
+module.controller('BlogCtrl', ['$scope', function ($scope) {
+
+    $scope.posts = [
+        {
+            image: './images/Black_background-2.jpg',
+            text: 'Blog stuff from database, or Ghost blog api'
+        },
+        {
+            image: './images/Black_background-2.jpg',
+            text: 'Blog stuff from database, or Ghost blog api'
+        },
+        {
+            image: './images/Black_background-2.jpg',
+            text: 'Blog stuff from database, or Ghost blog api'
+        }
+    ]
+
+}]);
+
 module.controller('ContactCtrl', ['$scope', 'Contact', '$state', function ($scope, Contact, $state) {
 
     $scope.contact = new Contact();
