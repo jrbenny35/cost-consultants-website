@@ -63,4 +63,5 @@ div(ng-controller="ContactCtrl")
                   h4 Please select a date you would like for customer service to contact you.
                   md-datepicker(ng-model='contact.date' md-placeholder='Enter Date')
                   br
-                  md-button.md-raised.md-accent#submitBtn( ui-sref='contact-thanks' type = "submit" ng-disabled='contactForm.$invalid' style='margin-bottom: 50px;') Submit
+                  md-button.md-raised.md-accent#submitBtn( ui-sref='contact-thanks' type = "submit" ng-disabled='contactForm.$invalid' style='margin-bottom: 1px;') Submit
+footer(ng-include="'partials/footer.jade'")

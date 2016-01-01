@@ -49,8 +49,10 @@ html(ng-app='myApp')
               md-icon(md-svg-icon='images/angular-material/menu.svg')
             //md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 12px')
               ng-md-icon(icon="people" style="fill: white" size="30")
-          md-toolbar#topnav.md-whiteframe-z2(layout='row' hide-xs hide-sm hide-md hide-lg )
+          md-toolbar#topnav.md-whiteframe-z2(layout='row' hide-xs hide-sm hide-md hide-lg style='max-height: 135px;')
             div(style='margin: auto;' layout='row' layout-align='center center' layout-padding)
+              md-list-item
+                img(src='images/Black_background-2.jpg' style='width: 175px; height: auto;')
               md-list-item
                 md-button.md-button(ui-sref='/' flex='' ui-sref-active='active' ng-click='close()')
                   h3 Home
@@ -67,7 +69,6 @@ html(ng-app='myApp')
                 md-button.md-button(ui-sref='blog' flex='' ui-sref-active='active' ng-click='close()')
                   h3 Blog
           div#mainView(ui-view='' layout='column')
-
 
 
 
