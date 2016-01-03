@@ -13,31 +13,38 @@ describe('Cost Consultants website', function () {
     /* Nav Links */
 
     it('should load navigation links', function () {
-        element(by.css('.md-sidenav-left')).all(by.tagName('h3'))
+        element(by.id('topnav')).all(by.tagName('h3'))
             .get(0)
             .click();
         expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/');
     });
 
     it('should load navigation links', function () {
-        element(by.css('.md-sidenav-left')).all(by.tagName('h3'))
+        element(by.id('topnav')).all(by.tagName('h3'))
             .get(1)
             .click();
         expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/about');
     });
 
     it('should load navigation links', function () {
-        element(by.css('.md-sidenav-left')).all(by.tagName('h3'))
+        element(by.id('topnav')).all(by.tagName('h3'))
             .get(2)
             .click();
         expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/contact');
     });
 
     it('should load navigation links', function () {
-        element(by.css('.md-sidenav-left')).all(by.tagName('h3'))
+        element(by.id('topnav')).all(by.tagName('h3'))
             .get(3)
             .click();
         expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/info');
+    });
+
+    it('should load navigation links', function () {
+        element(by.id('topnav')).all(by.tagName('h3'))
+            .get(4)
+            .click();
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/blog');
     });
 
     /* Test Form */
@@ -74,8 +81,7 @@ describe('Cost Consultants website', function () {
             .get(5)
             .click()
             .sendKeys('32223');
-        element(by.id('contact')).all(by.tagName('input'))
-            .get(6)
+        element(by.id('contact')).element(by.tagName('textarea'))
             .click()
             .sendKeys('This is a test from Protractor');
         element(by.id('contact'))
