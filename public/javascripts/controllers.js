@@ -59,22 +59,34 @@ module.controller('BlogPostCtrl', ['$scope', function ($scope) {
 
 }]);
 
-module.controller('BlogCtrl', ['$scope', function ($scope) {
+module.controller('BlogCtrl', ['$scope', 'Blog', function ($scope, Blog) {
 
-    $scope.posts = [
-        {
-            image: './images/Black_background-2.jpg',
-            text: 'Blog stuff from database, or Ghost blog api'
-        },
-        {
-            image: './images/Black_background-2.jpg',
-            text: 'Blog stuff from database, or Ghost blog api'
-        },
-        {
-            image: './images/Black_background-2.jpg',
-            text: 'Blog stuff from database, or Ghost blog api'
-        }
-    ]
+    $scope.posts = Blog.query();
+
+}]);
+
+module.controller('BlogPostCtrl', ['$scope', 'Blog', '$state', function ($scope, Blog, $state) {
+
+    $scope.blog = new Blog();
+
+    $scope.blog.date = new Date();
+    $scope.blog.tag = [];
+
+    $scope.addTag = function(){
+        $scope.blog.tag.push($scope.blog.newTag);
+        $scope.blog.newTag = '';
+    };
+
+
+    $scope.saveBlog = function () {
+        $scope.blog.$save();
+    };
+
+}]);
+
+module.controller('AdminCtrl', ['$scope', 'Blog', function ($scope, Blog) {
+
+    $scope.posts = Blog.query();
 
 }]);
 
@@ -85,10 +97,6 @@ module.controller('ContactCtrl', ['$scope', 'Contact', '$state', function ($scop
     //States
     $scope.contact.state = 'FL';
     $scope.contact.date = new Date();
-
-    //if($scope.defaultState != 'FL')
-       //$scope.contact.state = $scope.defaultState;
-        //else{$scope.contact.state = 'FL';}
 
     $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
     'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +

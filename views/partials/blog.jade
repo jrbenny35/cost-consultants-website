@@ -3,11 +3,11 @@ div.container()
     md-card(layout-padding ng-repeat='blog in posts')
       md-card-header
         md-card-header-text( layout-margin)
-          span.md-headline Title {{ blog.title }}
-          span.md-subhead 12/12/2015 {{ blog.date }}
-          span.md-subhead Written by Benny Forehand
+          span.md-headline Title: {{ blog.title }}
+          span.md-subhead Date: {{ blog.date }}
+          span.md-subhead Written by {{ blog.author }}
       div(layout='row' style='border-bottom: 1px solid #ba68c8;' layout-margin)
-        img(src='{{blog.image}}' style='width: auto; height: 325px;')
+        img(src='images/{{blog.image}}' style='width: auto; height: 325px;')
         md-card-content(layout='column')
           div(style='max-height: 300px; min-height: 200px;')
             p.
@@ -15,13 +15,9 @@ div.container()
               fames ac turpis egestas. Aliquam mi felis, luctus vel efficitur ac, egestas et nunc. Pellentesque eget egestas ipsum. Sed porttitor tortor sed nisi vehicula volutpat. Fusce eleifend semper quam quis vehicula. Pellentesque sed
               iaculis mauris. Sed et mattis nunc, vitae auctor arcu. {{ blog.shortPost }}
           div(layout='row' layout-align='end end')
-            md-button(ui-sref=' blogView({id:blog._id})' role='button') Continue Reading
-      div(layout='row' layout-margin)
-       md-button.md-raised(ui-sref='{{ blog.tag }}') Tag {{ blog.tag }}
-       md-button.md-raised(ui-sref='{{ blog.tag }}') Tag {{ blog.tag }}
-       md-button.md-raised(ui-sref='{{ blog.tag }}') Tag {{ blog.tag }}
-       md-button.md-raised(ui-sref='{{ blog.tag }}') Tag {{ blog.tag }}
-       md-button.md-raised(ui-sref='{{ blog.tag }}') Tag {{ blog.tag }}
-       md-button.md-raised(ui-sref='{{ blog.tag }}') Tag {{ blog.tag }}
+            md-button(ui-sref=' blogView/({id:blog._id})' role='button') Continue Reading
+      div(layout='row' layout-margin )
+       md-button.md-raised(ng-repeat='tags in blog.tag' ui-sref='{{ blog.tag }}' role='button') {{ tags }}
+
 
 footer(ng-include="'partials/footer.jade'")

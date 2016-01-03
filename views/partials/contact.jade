@@ -56,7 +56,7 @@ div(ng-controller="ContactCtrl")
                 div()
                   md-input-container(style='width: 100%')
                     label Inquiry
-                    input(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )
+                    textarea(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' columns='1', rows='5')
                     div(ng-messages='contactForm.message.$error' ng-show='contactForm.message.$touched')
                       span(ng-message='maxlength') Message is limited to 300 characters
                 md-content(layout-padding)

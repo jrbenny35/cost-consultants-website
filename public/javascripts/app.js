@@ -46,6 +46,21 @@ myApp.config(function ($stateProvider, $locationProvider) {
             url: '/blog',
             templateUrl: 'partials/blog',
             controller: 'BlogCtrl'
+        })
+        .state('blogView',{
+            url: '/blog/:id/view',
+            templateUrl: 'partials/blogDetail',
+            controller: 'BlogViewCtrl'
+        })
+        .state('blogPost',{
+            url: '/blog_post',
+            templateUrl: 'partials/blogPost',
+            controller: 'BlogPostCtrl'
+        })
+        .state('admin',{
+            url: '/admin',
+            templateUrl: 'partials/adminLayout',
+            controller: 'AdminCtrl'
         });
 
     $locationProvider.html5Mode(true);
@@ -61,4 +76,8 @@ myApp.config(function ($mdThemingProvider) {
 //Resources
 myApp.factory('Contact', function($resource) {
   return $resource('/api/contact/:id', { id: '@_id' }); //full endpoint address
+});
+
+myApp.factory('Blog', function ($resource) {
+   return $resource('/api/blog/:id', {id: '@_id'});
 });

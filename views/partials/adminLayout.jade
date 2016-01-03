@@ -1,0 +1,16 @@
+div(style='margin-top: 25px;').container
+  md-content
+    div(layout-padding)
+      md-toolbar(layout='row')
+        h1(style='text-align: center;' flex) Admin Database Control
+        md-button() New Post
+      div(layout-margin layout='row' flex ng-repeat='blog in posts')
+        div(flex='25')
+          h3 Blog Title: {{ blog.title }}
+        div(flex='25')
+          p Written by: {{ blog.author }}
+        div(flex='25')
+          p Written on: {{ blog.date }}
+        div(flex='25')
+          h3 Actions:
+

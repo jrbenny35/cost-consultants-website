@@ -21,15 +21,15 @@ var blogSchema = new Schema({
         type: String,
         required: true
     },
-    shortPost:{
-        type: String,
-        required: true
-    },
     longPost:{
         type: String,
         required: true
     },
-    tag: [{type: String}]
+    tag: [{type: String}],
+    author:{
+        type: String,
+        required: true
+    }
 
 });
 
