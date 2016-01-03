@@ -1,16 +1,21 @@
-div(style='margin-top: 25px;').container
+div(style='margin-top: 25px;').wideContainer
   md-content
-    div(layout-padding)
-      md-toolbar(layout='row')
-        h1(style='text-align: center;' flex) Admin Database Control
-        md-button() New Post
-      div(layout-margin layout='row' flex ng-repeat='blog in posts')
-        div(flex='25')
-          h3 Blog Title: {{ blog.title }}
-        div(flex='25')
-          p Written by: {{ blog.author }}
-        div(flex='25')
-          p Written on: {{ blog.date }}
-        div(flex='25')
-          h3 Actions:
+    md-card(layout-padding)
+      md-card-content
+        div(layout='row')
+          h1(style='text-align: center;' flex) Admin Database Control
+          md-button.md-button.md-primary(ui-sref='blogPost' style='margin: auto;') New Post
+        hr
+        div(layout-margin layout='row' flex ng-repeat='blog in posts')
+          div(flex='25' style='border-bottom: 1px solid black')
+            p Blog Title: {{ blog.title }}
+          div(flex='25' style='border-bottom: 1px solid black')
+            p Written by: {{ blog.author }}
+          div(flex='25' style='border-bottom: 1px solid black')
+            p Written on: {{ blog.date }}
+          div(flex='25' layout='row' )
+            h3 Actions:
+            md-button.md-raised Delete
+            md-button.md-raised Edit
+            md-button.md-raised View
 

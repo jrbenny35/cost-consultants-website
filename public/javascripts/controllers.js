@@ -59,9 +59,15 @@ module.controller('BlogPostCtrl', ['$scope', function ($scope) {
 
 }]);
 
-module.controller('BlogCtrl', ['$scope', 'Blog', function ($scope, Blog) {
+module.controller('BlogCtrl', ['$scope', 'Blog', '$stateParams', function ($scope, Blog, $stateParams) {
 
     $scope.posts = Blog.query();
+
+}]);
+
+module.controller('BlogViewCtrl', ['$scope', 'Blog', '$stateParams', function ($scope, Blog, $stateParams) {
+
+    $scope.blog = Blog.get({id: $stateParams.id});
 
 }]);
 
@@ -81,6 +87,8 @@ module.controller('BlogPostCtrl', ['$scope', 'Blog', '$state', function ($scope,
     $scope.saveBlog = function () {
         $scope.blog.$save();
     };
+
+
 
 }]);
 

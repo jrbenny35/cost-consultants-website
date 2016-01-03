@@ -1,5 +1,5 @@
 div.container()
-  md-content(layout-padding ng-controller='BlogCtrl')
+  md-content(layout-padding)
     md-card(layout-padding ng-repeat='blog in posts')
       md-card-header
         md-card-header-text( layout-margin)
@@ -15,7 +15,7 @@ div.container()
               fames ac turpis egestas. Aliquam mi felis, luctus vel efficitur ac, egestas et nunc. Pellentesque eget egestas ipsum. Sed porttitor tortor sed nisi vehicula volutpat. Fusce eleifend semper quam quis vehicula. Pellentesque sed
               iaculis mauris. Sed et mattis nunc, vitae auctor arcu. {{ blog.shortPost }}
           div(layout='row' layout-align='end end')
-            md-button(ui-sref=' blogView/({id:blog._id})' role='button') Continue Reading
+            md-button(ui-sref=' blogView({id:blog._id})' ng-click='viewPost()' role='button') Continue Reading
       div(layout='row' layout-margin )
        md-button.md-raised(ng-repeat='tags in blog.tag' ui-sref='{{ blog.tag }}' role='button') {{ tags }}
 
