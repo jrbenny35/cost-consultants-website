@@ -2,6 +2,8 @@
 
 describe('Cost Consultants website', function () {
 
+    var EC = protractor.ExpectedConditions;
+
     beforeEach(function () {
         browser.get('http://localhost:3000');
     });
@@ -49,12 +51,10 @@ describe('Cost Consultants website', function () {
 
     /* Test Form */
 
-
     it('should allow form input and validate', function () {
 
         browser.get('http://localhost:3000/contact');
 
-        var EC = protractor.ExpectedConditions;
         var input = element(by.id('contact')).element(by.tagName('input'));
         var isVisible = EC.visibilityOf(input);
 
