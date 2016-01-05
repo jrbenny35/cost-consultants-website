@@ -98,9 +98,13 @@ describe('Cost Consultants website', function () {
 
     it('should update blog correctly', function () {
         browser.get('http://localhost:3000/blog_post');
-        element(by.id('blog')).all(by.tagName('input'))
-            .get(0)
-            .click()
+
+        var EC = protractor.ExpectedConditions;
+        var input = element(by.id('blog')).element(by.tagName('input'));
+        var isVisible = EC.visibilityOf(input);
+        
+        browser.wait(isVisible, 10000);
+        input.click()
             .sendKeys('Blog Test From Protractor');
         element(by.id('blog')).all(by.tagName('input'))
             .get(2)
