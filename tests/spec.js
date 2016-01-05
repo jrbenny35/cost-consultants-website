@@ -94,4 +94,40 @@ describe('Cost Consultants website', function () {
         expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/thanks');
     });
 
+    /* Test blog Post */
+
+    it('should update blog correctly', function () {
+        browser.get('http://localhost:3000/blog_post');
+        element(by.id('blog')).all(by.tagName('input'))
+            .get(0)
+            .click()
+            .sendKeys('Blog Test From Protractor');
+        element(by.id('blog')).all(by.tagName('input'))
+            .get(2)
+            .click()
+            .sendKeys('Blog Test From Protractor');
+        element(by.id('blog')).all(by.tagName('input'))
+            .get(3)
+            .click()
+            .sendKeys('Angular');
+        element(by.id('blog')).all(by.tagName('input'))
+            .get(3)
+            .click()
+            .sendKeys('Test');
+        element(by.id('blog')).element(by.id('addTag'))
+            .click();
+        element(by.id('blog'))
+            .element(by.tagName('md-datepicker'))
+            .click();
+        element(by.id('blog')).all(by.tagName('textarea'))
+            .click()
+            .sendKeys('Blog Test From Protractor');
+        element(by.tagName('form'))
+            .element(by.id('submitBtn'))
+            .click();
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/blog');
+
+    });
+
+
 }); //End main test function
