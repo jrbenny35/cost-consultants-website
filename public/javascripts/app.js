@@ -13,7 +13,8 @@ var myApp = angular.module('myApp',[
     'ngMaterial',
     'ngMessages',
     'ui.bootstrap',
-    'ngMdIcons'
+    'ngMdIcons',
+    'angularMoment'
 
 ]);
 
@@ -81,3 +82,10 @@ myApp.factory('Contact', function($resource) {
 myApp.factory('Blog', function ($resource) {
    return $resource('/api/blog/:id', {id: '@_id'});
 });
+
+myApp.config(function ($mdDateLocaleProvider) {
+    $mdDateLocaleProvider.formatDate = function (date) {
+        return moment(date).format('LL');
+    };
+});
+

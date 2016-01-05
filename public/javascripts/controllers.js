@@ -27,37 +27,6 @@ module.controller('RightNavCtrl', ['$scope', '$mdSidenav', function ($scope, $md
 
 }]);
 
-module.controller('CarouselCtrl', ['$scope' , function ($scope) {
-
-    $scope.myInterval = 5000;
-    $scope.slides = [
-        {
-            image: './images/Black_background-2.jpg',
-            text: 'Cost Consultants!'
-        },
-        {
-            image: './images/Black_background-2.jpg',
-            text: 'Slide 2'
-        },
-        {
-            image: './images/Black_background-2.jpg',
-            text: 'Slide 3'
-        }
-    ];
-
-
-}]);
-
-module.controller('BlogPostCtrl', ['$scope', function ($scope) {
-
-    $scope.posts = [
-        {
-            image: '',
-            text: 'Blog stuff from database, or Ghost blog api'
-        }
-    ]
-
-}]);
 
 module.controller('BlogCtrl', ['$scope', 'Blog', '$stateParams', function ($scope, Blog, $stateParams) {
 
@@ -78,6 +47,8 @@ module.controller('BlogPostCtrl', ['$scope', 'Blog', '$state', function ($scope,
     $scope.blog.date = new Date();
     $scope.blog.tag = [];
 
+    $scope.blog.author = 'Benny Forehand';
+
     $scope.addTag = function(){
         $scope.blog.tag.push($scope.blog.newTag);
         $scope.blog.newTag = '';
@@ -85,7 +56,9 @@ module.controller('BlogPostCtrl', ['$scope', 'Blog', '$state', function ($scope,
 
 
     $scope.saveBlog = function () {
-        $scope.blog.$save();
+        $scope.blog.$save().then(function () {
+            $state.go('blog');
+        });
     };
 
 

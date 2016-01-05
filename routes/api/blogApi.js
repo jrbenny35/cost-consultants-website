@@ -15,9 +15,9 @@ router.route('/blog')
         blog.title = req.body.title;
         blog.date = req.body.date;
         blog.image = req.body.image;
-        blog.shortPost = req.body.shortPost;
         blog.longPost = req.body.longPost;
         blog.tag = req.body.tag;
+        blog.author = req.body.author;
 
         blog.save(function (err, blog) {
             if (!err) {

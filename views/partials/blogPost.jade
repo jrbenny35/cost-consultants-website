@@ -3,7 +3,7 @@ div.wideContainer(style='margin-top: 25px;' ng-controller="BlogPostCtrl")
     md-card-content
       h1(style='text-align: center;') Update blog here
       hr
-      form( name='BlogForm' role='form' layout-padding)
+      form#blog( name='BlogForm' role='form' layout-padding)
         div(layout='row')
           div(layout='column' style='width: 50%;')
             md-input-container()
@@ -25,7 +25,7 @@ div.wideContainer(style='margin-top: 25px;' ng-controller="BlogPostCtrl")
               md-input-container
                 label Blog Tags
                 input(type='text', ng-minlength='5', ng-maxlength='15' name='tag' ng-model='blog.newTag')
-              md-button(ng-click='addTag()' type='addTag' ) Add Tag
+              md-button#addTag(ng-click='addTag()' type='addTag' ) Add Tag
               div(layout='row')
                 p Tags Added:
                   div( ng-repeat='tags in blog.tag')
@@ -33,6 +33,7 @@ div.wideContainer(style='margin-top: 25px;' ng-controller="BlogPostCtrl")
 
 
             div
+              p Please input a blog date:
               md-datepicker(ng-model='blog.date' md-placeholder='Blog Date')
           div(flex)
             md-input-container(style='width: 100%;')

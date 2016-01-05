@@ -25,11 +25,12 @@ var blogSchema = new Schema({
         type: String,
         required: true
     },
-    tag: [{type: String}],
     author:{
         type: String,
         required: true
-    }
+    },
+    tag: [{type: String}]
+
 
 });
 
