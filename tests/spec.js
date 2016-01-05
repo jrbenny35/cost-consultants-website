@@ -102,20 +102,20 @@ describe('Cost Consultants website', function () {
         var EC = protractor.ExpectedConditions;
         var input = element(by.id('blog')).element(by.tagName('input'));
         var isVisible = EC.visibilityOf(input);
-        
+
         browser.wait(isVisible, 10000);
         input.click()
             .sendKeys('Blog Test From Protractor');
         element(by.id('blog')).all(by.tagName('input'))
-            .get(2)
+            .get(1)
             .click()
             .sendKeys('Blog Test From Protractor');
         element(by.id('blog')).all(by.tagName('input'))
-            .get(3)
+            .get(2)
             .click()
             .sendKeys('Angular');
         element(by.id('blog')).all(by.tagName('input'))
-            .get(3)
+            .get(4)
             .click()
             .sendKeys('Test');
         element(by.id('blog')).element(by.id('addTag'))
