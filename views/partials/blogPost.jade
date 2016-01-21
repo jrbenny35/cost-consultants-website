@@ -1,4 +1,4 @@
-div.wideContainer(style='margin-top: 25px;' ng-controller="BlogPostCtrl")
+div.wideContainer(style='margin-top: 25px;')
   md-card()
     md-card-content
       h1(style='text-align: center;') Update blog here
@@ -30,8 +30,6 @@ div.wideContainer(style='margin-top: 25px;' ng-controller="BlogPostCtrl")
                 p Tags Added:
                   div( ng-repeat='tags in blog.tag')
                     md-button.md-raised {{ tags }}
-
-
             div
               p Please input a blog date:
               md-datepicker(ng-model='blog.date' md-placeholder='Blog Date')

@@ -4,7 +4,7 @@ div.container()
       md-card-header
         md-card-header-text( layout-margin)
           span.md-headline Title: {{ blog.title }}
-          span.md-subhead Date: {{ blog.date }}
+          span.md-subhead Date: {{ blog.date | amDateFormat: 'dddd, MMMM Do YYYY' }}
           span.md-subhead Written by {{ blog.author }}
       div(layout='row' style='border-bottom: 1px solid #ba68c8;' layout-margin)
         img(src='images/{{blog.image}}' style='width: auto; height: 325px;')

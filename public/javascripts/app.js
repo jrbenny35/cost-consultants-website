@@ -58,6 +58,11 @@ myApp.config(function ($stateProvider, $locationProvider) {
             templateUrl: 'partials/blogPost',
             controller: 'BlogPostCtrl'
         })
+        .state('blogEdit',{
+            url: '/blog/:id/edit',
+            templateUrl: 'partials/blogPost',
+            controller: 'BlogEditCtrl'
+        })
         .state('admin',{
             url: '/admin',
             templateUrl: 'partials/adminLayout',
@@ -80,7 +85,9 @@ myApp.factory('Contact', function($resource) {
 });
 
 myApp.factory('Blog', function ($resource) {
-   return $resource('/api/blog/:id', {id: '@_id'});
+   return $resource('/api/blog/:id', {id: '@_id'}, {
+     update: { method: 'PUT', params: {id: '@id'} },
+   });
 });
 
 myApp.config(function ($mdDateLocaleProvider) {
@@ -88,4 +95,3 @@ myApp.config(function ($mdDateLocaleProvider) {
         return moment(date).format('LL');
     };
 });
-
