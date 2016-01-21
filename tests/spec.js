@@ -10,7 +10,7 @@ describe('Cost Consultants website', function () {
     it('should have a title', function(){
         expect(browser.getTitle()).toEqual('Cost Consultants');
     });
-/*
+
     /* Nav Links */
 
     it('should load navigation links', function () {
@@ -107,23 +107,16 @@ describe('Cost Consultants website', function () {
         input.click()
             .sendKeys('Blog Test From Protractor');
         element(by.id('blog')).all(by.tagName('input'))
-            .get(1)
-            .click()
-            .sendKeys('Blog Test From Protractor');
-        element(by.id('blog')).all(by.tagName('input'))
             .get(2)
             .click()
-            .sendKeys('Angular');
+            .sendKeys('Black_background-2.jpg');
         element(by.id('blog')).all(by.tagName('input'))
-            .get(4)
+            .get(3)
             .click()
-            .sendKeys('Test');
+            .sendKeys('Angular');
         element(by.id('blog')).element(by.id('addTag'))
             .click();
-        element(by.id('blog'))
-            .element(by.tagName('md-datepicker'))
-            .click();
-        element(by.id('blog')).all(by.tagName('textarea'))
+        element(by.id('blog')).element(by.tagName('textarea'))
             .click()
             .sendKeys('Blog Test From Protractor');
         element(by.tagName('form'))
