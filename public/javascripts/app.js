@@ -14,8 +14,7 @@ var myApp = angular.module('myApp',[
     'ngMessages',
     'ui.bootstrap',
     'ngMdIcons',
-    'angularMoment',
-    'door3.css'
+    'angularMoment'
 
 ]);
 
