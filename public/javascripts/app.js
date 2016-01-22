@@ -14,7 +14,8 @@ var myApp = angular.module('myApp',[
     'ngMessages',
     'ui.bootstrap',
     'ngMdIcons',
-    'angularMoment'
+    'angularMoment',
+    'door3.css'
 
 ]);
 
@@ -24,7 +25,7 @@ myApp.config(function ($stateProvider, $locationProvider) {
     $stateProvider
         .state('/', {
             url: '/',
-            templateUrl: 'partials/home'
+            templateUrl: 'partials/home',
         })
         .state('about',{
             url: '/about',
