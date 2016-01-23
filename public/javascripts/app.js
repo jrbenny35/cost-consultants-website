@@ -24,7 +24,7 @@ myApp.config(function ($stateProvider, $locationProvider) {
     $stateProvider
         .state('/', {
             url: '/',
-            templateUrl: 'partials/home',
+            templateUrl: 'partials/home'
         })
         .state('about',{
             url: '/about',
